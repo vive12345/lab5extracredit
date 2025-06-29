@@ -51,10 +51,12 @@ public class ElizaService {
     public String generateResponse(String userInput, SessionData sessionData) {
         String input = userInput.toLowerCase();
 
-        // Try to find a matching key
+        // Try to find a matching key - now checks multiple keywords per entry
         for (ElizaEntry entry : elizaData.getElizaEntries()) {
-            if (input.contains(entry.getKey().toLowerCase())) {
-                return generateResponseForKey(entry, sessionData);
+            for (String keyword : entry.getKey()) {
+                if (input.contains(keyword.toLowerCase())) {
+                    return generateResponseForKey(entry, sessionData);
+                }
             }
         }
 
@@ -63,7 +65,8 @@ public class ElizaService {
     }
 
     private String generateResponseForKey(ElizaEntry entry, SessionData sessionData) {
-        String key = entry.getKey();
+        // Use first keyword as identifier for tracking responses
+        String key = entry.getKey().get(0);
 
         // Get available answer indices
         Set<Integer> usedAnswers = sessionData.getUsedAnswerIndices().getOrDefault(key, new HashSet<>());

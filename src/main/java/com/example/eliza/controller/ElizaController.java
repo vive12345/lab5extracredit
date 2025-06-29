@@ -25,6 +25,23 @@ public class ElizaController {
         return "index";
     }
 
+    @GetMapping("/chat")
+    public String showChat(HttpSession session, Model model) {
+        // Get session data
+        SessionData sessionData = (SessionData) session.getAttribute(SESSION_DATA_KEY);
+
+        if (sessionData == null) {
+            // No session, redirect to start
+            return "redirect:/";
+        }
+
+        // Add data to model for display
+        model.addAttribute("userName", sessionData.getUserName());
+        model.addAttribute("sessionData", sessionData);
+
+        return "chat";
+    }
+
     @PostMapping("/start")
     public String startConversation(@RequestParam("name") String name,
             HttpSession session,

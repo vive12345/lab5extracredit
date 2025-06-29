@@ -3,7 +3,7 @@ package com.example.eliza.model;
 import java.util.List;
 
 public class ElizaEntry {
-    private String key;
+    private List<String> key;
     private List<String> answer;
     private List<String> question;
 
@@ -11,18 +11,18 @@ public class ElizaEntry {
     public ElizaEntry() {
     }
 
-    public ElizaEntry(String key, List<String> answer, List<String> question) {
+    public ElizaEntry(List<String> key, List<String> answer, List<String> question) {
         this.key = key;
         this.answer = answer;
         this.question = question;
     }
 
     // Getters and Setters
-    public String getKey() {
+    public List<String> getKey() {
         return key;
     }
 
-    public void setKey(String key) {
+    public void setKey(List<String> key) {
         this.key = key;
     }
 

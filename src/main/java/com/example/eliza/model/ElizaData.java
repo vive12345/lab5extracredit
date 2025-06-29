@@ -3,16 +3,29 @@ package com.example.eliza.model;
 import java.util.List;
 
 public class ElizaData {
-    private List<ElizaEntry> elizaEntries;
+    private String dictionary_name;
+    private List<ElizaEntry> entries;
 
     public ElizaData() {
     }
 
-    public List<ElizaEntry> getElizaEntries() {
-        return elizaEntries;
+    public String getDictionary_name() {
+        return dictionary_name;
     }
 
-    public void setElizaEntries(List<ElizaEntry> elizaEntries) {
-        this.elizaEntries = elizaEntries;
+    public void setDictionary_name(String dictionary_name) {
+        this.dictionary_name = dictionary_name;
+    }
+
+    public List<ElizaEntry> getEntries() {
+        return entries;
+    }
+
+    public void setEntries(List<ElizaEntry> entries) {
+        this.entries = entries;
+    }
+
+    public List<ElizaEntry> getElizaEntries() {
+        return entries;
     }
 }
