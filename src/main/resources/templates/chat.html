@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Eliza Chat</title>
+</head>
+<body>
+    <h1>Chat with Eliza</h1>
+    
+    <!-- Show greeting on first visit -->
+    <div th:if="${greeting}">
+        <p><strong>Eliza:</strong> <span th:text="${greeting}"></span></p>
+    </div>
+    
+    <!-- Show latest exchange if exists -->
+    <div th:if="${latestUserInput}">
+        <p><strong th:text="${userName}">User</strong>: <span th:text="${latestUserInput}"></span></p>
+        <p><strong>Eliza:</strong> <span th:text="${latestElizaResponse}"></span></p>
+    </div>
+    
+    <!-- Show full conversation history -->
+    <div th:if="${sessionData.conversation.size() > 1}">
+        <h3>Conversation History:</h3>
+        <div th:each="turn, iterStat : ${sessionData.conversation}" 
+             th:if="${iterStat.index < sessionData.conversation.size() - 1}">
+            <p><strong th:text="${userName}">User</strong>: <span th:text="${turn.userInput}"></span></p>
+            <p><strong>Eliza:</strong> <span th:text="${turn.elizaResponse}"></span></p>
+            <hr>
+        </div>
+    </div>
+    
+    <!-- Input form always at bottom -->
+    <form action="/chat" method="post">
+        <label for="userInput">Your message:</label>
+        <input type="text" id="userInput" name="userInput" required autofocus>
+        <input type="submit" value="Send">
+    </form>
+    
+    <p><a href="/">Start New Conversation</a></p>
+</body>
+</html>

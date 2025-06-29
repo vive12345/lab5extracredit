@@ -1,0 +1,69 @@
+{
+  "elizaEntries": [
+    {
+      "key": "mother",
+      "answer": [
+        "Tell me more about your mother.",
+        "How do you feel about your mother?",
+        "What comes to mind when you think of your mother?"
+      ],
+      "question": [
+        "What was your relationship with your mother like?",
+        "Did your mother influence your current feelings?",
+        "How important was your mother to you?"
+      ]
+    },
+    {
+      "key": "father",
+      "answer": [
+        "Your father sounds important to you.",
+        "What role did your father play in your life?",
+        "Tell me about your father."
+      ],
+      "question": [
+        "How did your father make you feel?",
+        "What did you learn from your father?",
+        "Do you think about your father often?"
+      ]
+    },
+    {
+      "key": "dream",
+      "answer": [
+        "Dreams can be very meaningful.",
+        "That's an interesting dream.",
+        "Dreams often reflect our subconscious thoughts."
+      ],
+      "question": [
+        "What do you think this dream means?",
+        "Have you had similar dreams before?",
+        "How did the dream make you feel?"
+      ]
+    },
+    {
+      "key": "fear",
+      "answer": [
+        "Fear is a natural emotion.",
+        "It's understandable to feel afraid sometimes.",
+        "Many people experience similar fears."
+      ],
+      "question": [
+        "What specifically are you afraid of?",
+        "When did you first notice this fear?",
+        "How does this fear affect your daily life?"
+      ]
+    },
+    {
+      "key": "happy",
+      "answer": [
+        "I'm glad to hear you're happy.",
+        "Happiness is wonderful.",
+        "It's great that you're feeling positive."
+      ],
+      "question": [
+        "What makes you feel most happy?",
+        "How long have you been feeling this way?",
+        "What brings joy to your life?"
+      ]
+    }
+  ]
+}
